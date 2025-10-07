@@ -1,0 +1,159 @@
+/* ====== Warna dasar ====== */
+:root {
+  --green: rgba(60, 179, 113, 0.3); /* hijau muda transparan */
+  --green-dark: rgb(60, 179, 113);
+  --gray: #666;
+  --white: #ffffff;
+}
+
+/* ====== Layout umum ====== */
+body {
+  background-color: var(--white);
+  font-family: "Segoe UI", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 10px;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+/* ====== Container utama ====== */
+.todo-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ====== Judul ====== */
+.todo-container h1 {
+  text-align: center;
+  color: var(--green-dark);
+  margin-bottom: 15px;
+}
+
+/* ====== Input tambah todo ====== */
+.todo-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.todo-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+.todo-input input:focus {
+  border-color: var(--green-dark);
+}
+
+.todo-input button {
+  background: var(--green);
+  color: var(--green-dark);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.todo-input button:hover {
+  background: var(--green-dark);
+  color: white;
+}
+
+/* ====== Tombol filter ====== */
+.todo-filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.todo-filters button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 8px;
+  border: 1px solid var(--green-dark);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--green-dark);
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.todo-filters button:hover {
+  background: var(--green);
+}
+
+/* ====== Daftar todo ====== */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ====== Item todo ====== */
+.todo-item {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.todo-item input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.todo-item span {
+  flex: 1;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.todo-item span.completed {
+  text-decoration: line-through;
+  color: var(--gray);
+}
+
+/* ====== Tombol hapus ====== */
+.todo-item button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.todo-item button:hover img {
+  filter: brightness(0) saturate(100%) invert(49%) sepia(68%) saturate(411%) hue-rotate(94deg) brightness(92%) contrast(92%);
+}
+
+/* ====== Responsif untuk HP ====== */
+@media (max-width: 480px) {
+  .todo-container {
+    padding: 15px;
+  }
+
+  .todo-input input {
+    font-size: 13px;
+  }
+
+  .todo-filters button {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
